@@ -1,10 +1,9 @@
 # NVIM
-Install at ~/.config/nvim/
+Install at ~/.config/
 
 ## Plugins
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 * [Zero-LSP](https://github.com/VonHeikemen/lsp-zero.nvim)
-* [Fugitive](https://github.com/tpope/vim-fugitive)
 * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 * [Harpoon](https://github.com/ThePrimeagen/harpoon)
 * [Undotree](https://github.com/mbbill/undotree)
