@@ -13,18 +13,17 @@ Install at ~/.config/
 ### General
 | Command   | Mode   | Comment          |
 |-----------|--------|------------------|
-| <space>pv | Normal | Back to explorer |
-| <space>ps | Normal | Search           |
-| <space>pf | Normal | File search      |
-| <space>pg | Normal | Git              |
-| <space>u  | Normal | Undotree         |
+| space+pv  | Normal | Back to explorer |
+| space+ps  | Normal | Search           |
+| space+pf  | Normal | File search      |
+| space+u   | Normal | Undotree         |
 | gd        | Normal | Go to definition |
 | K         | Normal | Hover            |
 
 ### Harpoon
 | Command  | Mode   | Comment         |
 |----------|--------|-----------------|
-| <space>a | Normal | Add file        |
+| space+a  | Normal | Add file        |
 | ctrl + e | Normal | Menu            |
 | ctrl + 1 | Normal | Swap to file #1 |
 | ctrl + 2 | Normal | Swap to file #2 |
@@ -34,6 +33,5 @@ Install at ~/.config/
 https://www.tablesgenerator.com/markdown_tables
 
 ## What's missing
-* MyPy
 * Auto 'import'
 * Do I need Undotree?
