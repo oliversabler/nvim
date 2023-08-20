@@ -1,5 +1,12 @@
 # NVIM
-Install at ~/.config/
+
+## Install
+1. Install (clone) at ~/.config/
+2. Install packer (https://github.com/wbthomason/packer.nvim)
+3. Comment out theme lines in lua/chaebol/packer.lua
+4. :so
+5. :PackerInstall
+6. Fix theme and run :PackerInstall again
 
 ## Plugins
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
