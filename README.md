@@ -33,5 +33,6 @@ Install at ~/.config/
 https://www.tablesgenerator.com/markdown_tables
 
 ## What's missing
-* Auto 'import'
+* Auto 'import' (rust, python)
+* Format on save (cargo fmt)
 * Do I need Undotree?
