@@ -8,6 +8,9 @@
 5. :PackerInstall
 6. Fix theme and run :PackerInstall again
 
+### Prerequisites
+For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSushi/ripgrep)
+
 ## Plugins
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 * [Zero-LSP](https://github.com/VonHeikemen/lsp-zero.nvim)
