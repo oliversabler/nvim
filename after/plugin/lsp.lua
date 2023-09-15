@@ -10,9 +10,9 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.ensure_installed({
-    'rust_analyzer',
-    'pylsp',
-    'ruff_lsp'
+    'gopls',
+    'ruff_lsp',
+    'rust_analyzer'
 })
 
 lsp.setup()
@@ -36,3 +36,4 @@ cmp.setup({
 })
 
 require('lspconfig').ruff_lsp.setup{}
+require('lspconfig').gopls.setup{}
