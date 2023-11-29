@@ -12,7 +12,8 @@ end)
 lsp.ensure_installed({
     'gopls',
     'ruff_lsp',
-    'rust_analyzer'
+    'rust_analyzer',
+    -- 'tsserver'
 })
 
 lsp.setup()
