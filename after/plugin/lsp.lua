@@ -38,3 +38,4 @@ cmp.setup({
 
 require('lspconfig').ruff_lsp.setup{}
 require('lspconfig').gopls.setup{}
+-- require('lspconfig').tsserver.setup{}
