@@ -9,33 +9,25 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
 end)
 
-lsp.ensure_installed({
-    'gopls',
-    'ruff_lsp',
-    'rust_analyzer',
-    -- 'tsserver'
-})
-
 lsp.setup()
 
--- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
     mapping = {
-        -- `Enter` key to confirm completion
         ['<CR>'] = cmp.mapping.confirm({select = false}),
 
-        -- Ctrl+Space to trigger completion menu
         ['<C-Space>'] = cmp.mapping.complete(),
 
-        -- Navigate between snippet placeholder
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     }
 })
 
+require('mason').setup()
+
 require('lspconfig').ruff_lsp.setup{}
 require('lspconfig').gopls.setup{}
--- require('lspconfig').tsserver.setup{}
+require('lspconfig').tsserver.setup{}
+require('lspconfig').lua_ls.setup{}

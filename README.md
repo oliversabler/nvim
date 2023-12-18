@@ -1,22 +1,17 @@
 # NVIM
 
 ## Install
-1. Install (clone) at ~/.config/
-2. Install packer (https://github.com/wbthomason/packer.nvim)
-3. Comment out theme lines in lua/chaebol/packer.lua
-4. :so
-5. :PackerInstall
-6. Fix theme and run :PackerInstall again
+1. Clone to ~/.config/
+2. Run nvim?
 
 ### Prerequisites
 For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Plugins
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-* [Zero-LSP](https://github.com/VonHeikemen/lsp-zero.nvim)
+* [LSP-Zero](https://github.com/VonHeikemen/lsp-zero.nvim)
 * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-* [Harpoon](https://github.com/ThePrimeagen/harpoon)
-* [Undotree](https://github.com/mbbill/undotree)
+* [Harpoon2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 
 ## Commands Cheat Sheet
 
@@ -26,7 +21,6 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | space+pv  | Normal | Back to explorer |
 | space+ps  | Normal | Search           |
 | space+pf  | Normal | File search      |
-| space+u   | Normal | Undotree         |
 | gd        | Normal | Go to definition |
 | K         | Normal | Hover            |
 
@@ -40,8 +34,5 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | ctrl + 3 | Normal | Swap to file #3 |
 | ctrl + 4 | Normal | Swap to file #4 |
 
-https://www.tablesgenerator.com/markdown_tables
-
-## What's missing
-* Auto 'import' (rust, python)
-* Format on save (cargo fmt)
+### Nice to have, fix sometime in the future
+* format on save
