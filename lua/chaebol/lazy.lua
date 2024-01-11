@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     -- Theme
-    { 'sainnhe/sonokai' },
+    { 'rebelot/kanagawa.nvim' },
 
     -- Dependencies
     { 'nvim-lua/plenary.nvim' },
@@ -41,13 +41,19 @@ require('lazy').setup({
     },
 
     -- Lsp Zero
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
 
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    {'L3MON4D3/LuaSnip'},
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'L3MON4D3/LuaSnip' },
+
+    -- Templ
+    { 'vrischmann/tree-sitter-templ' },
+
+    -- Formatter
+    { 'sbdchd/neoformat' }
 })
 

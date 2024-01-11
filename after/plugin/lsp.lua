@@ -27,7 +27,8 @@ cmp.setup({
 
 require('mason').setup()
 
-require('lspconfig').ruff_lsp.setup{}
+require('lspconfig').rust_analyzer.setup({})
 require('lspconfig').gopls.setup{}
+require('lspconfig').ruff_lsp.setup{}
 require('lspconfig').tsserver.setup{}
 require('lspconfig').lua_ls.setup{}
