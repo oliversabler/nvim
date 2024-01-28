@@ -32,3 +32,4 @@ require('lspconfig').gopls.setup{}
 require('lspconfig').ruff_lsp.setup{}
 require('lspconfig').tsserver.setup{}
 require('lspconfig').lua_ls.setup{}
+require('lspconfig').clangd.setup{}
