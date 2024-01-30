@@ -31,5 +31,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = '100'
 
-vim.opt.list = true
-vim.cmd([[match errorMsg /\s\+$/]])
+-- Remove trailing whitespace on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = { "*" },
+    command = [[%s/\s\+$//e]],
+})
