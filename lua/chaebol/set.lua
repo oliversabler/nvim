@@ -30,9 +30,3 @@ vim.opt.isfname:append('@-@')
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = '100'
-
--- Remove trailing whitespace on save
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = { "*" },
-    command = [[%s/\s\+$//e]],
-})
