@@ -33,6 +33,11 @@ require('lazy').setup({
         build = ':TSUpdate'
     },
 
+    -- Treesitter Context
+    {
+        'nvim-treesitter/nvim-treesitter-context',
+    },
+
     -- Harpoon
     {
         'theprimeagen/harpoon',

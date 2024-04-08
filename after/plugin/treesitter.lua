@@ -8,6 +8,8 @@ treesitter_parser_config.templ = {
 }
 vim.treesitter.language.register('templ', 'templ')
 
+require'treesitter-context'.setup{}
+
 require'nvim-treesitter.configs'.setup {
     ensure_installed = { 'python', 'c', 'lua', 'vim', 'vimdoc', 'query' },
 
@@ -21,4 +23,3 @@ require'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = false,
     },
 }
-

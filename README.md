@@ -27,14 +27,14 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | space+Y   | Normal | Yank line to clipboard |
 
 ### Harpoon
-| Command  | Mode   | Comment         |
-|----------|--------|-----------------|
-| space+a  | Normal | Add file        |
-| ctrl + e | Normal | Menu            |
-| ctrl + 1 | Normal | Swap to file #1 |
-| ctrl + 2 | Normal | Swap to file #2 |
-| ctrl + 3 | Normal | Swap to file #3 |
-| ctrl + 4 | Normal | Swap to file #4 |
+| Command   | Mode   | Comment         |
+|-----------|--------|-----------------|
+| space + a | Normal | Add file        |
+| ctrl + e  | Normal | Menu            |
+| space + 1 | Normal | Swap to file #1 |
+| space + 2 | Normal | Swap to file #2 |
+| space + 3 | Normal | Swap to file #3 |
+| space + 4 | Normal | Swap to file #4 |
 
 ### Nice to have, fix sometime in the future
 * format on save

@@ -30,3 +30,14 @@ vim.opt.isfname:append('@-@')
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = '100'
+
+vim.opt.list = true
+
+local space = "·"
+vim.opt.listchars:append {
+    tab = "│─",
+    multispace = space,
+    lead = space,
+    trail = space,
+    nbsp = space
+}
