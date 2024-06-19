@@ -16,15 +16,17 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 ## Commands Cheat Sheet
 
 ### General
-| Command   | Mode   | Comment                |
-|-----------|--------|------------------------|
-| space+pv  | Normal | Back to explorer       |
-| space+ps  | Normal | Search                 |
-| space+pf  | Normal | File search            |
-| gd        | Normal | Go to definition       |
-| K         | Normal | Hover                  |
-| space+y   | Visual | Yank to clipboard      |
-| space+Y   | Normal | Yank line to clipboard |
+| Command     | Mode   | Comment                |
+|-------------|--------|------------------------|
+| space + pv  | Normal | Back to explorer       |
+| space + ps  | Normal | Search                 |
+| space + pf  | Normal | File search            |
+| gd          | Normal | Go to definition       |
+| K           | Normal | Hover                  |
+| space + y   | Visual | Yank to clipboard      |
+| space + Y   | Normal | Yank line to clipboard |
+| ctrl + K    | Visual | Move line up           |
+| ctrl + J    | Visual | Move line down         |
 
 ### Harpoon
 | Command   | Mode   | Comment         |
