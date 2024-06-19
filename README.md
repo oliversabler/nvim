@@ -25,8 +25,8 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | K           | Normal | Hover                  |
 | space + y   | Visual | Yank to clipboard      |
 | space + Y   | Normal | Yank line to clipboard |
-| ctrl + K    | Visual | Move line up           |
-| ctrl + J    | Visual | Move line down         |
+| ctrl + k    | Visual | Move line up           |
+| ctrl + j    | Visual | Move line down         |
 
 ### Harpoon
 | Command   | Mode   | Comment         |
