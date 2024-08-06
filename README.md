@@ -37,6 +37,3 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | space + 2 | Normal | Swap to file #2 |
 | space + 3 | Normal | Swap to file #3 |
 | space + 4 | Normal | Swap to file #4 |
-
-### Nice to have, fix sometime in the future
-* format on save
