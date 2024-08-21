@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     -- Theme
-    { 'rebelot/kanagawa.nvim' },
+    { 'rose-pine/neovim', as = 'rose-pine' },
 
     -- Dependencies
     { 'nvim-lua/plenary.nvim' },

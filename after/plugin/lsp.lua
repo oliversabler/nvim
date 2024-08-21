@@ -33,6 +33,6 @@ require('lspconfig').ruff_lsp.setup{}
 require('lspconfig').tsserver.setup{}
 require('lspconfig').lua_ls.setup{}
 require('lspconfig').clangd.setup{
-    filetypes = 'c'
+    filetypes = {'c'}
 }
 require('lspconfig').gleam.setup{}
