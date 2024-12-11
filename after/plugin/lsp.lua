@@ -27,12 +27,13 @@ cmp.setup({
 
 require('mason').setup()
 
-require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').gopls.setup{}
-require('lspconfig').ruff_lsp.setup{}
-require('lspconfig').tsserver.setup{}
-require('lspconfig').lua_ls.setup{}
 require('lspconfig').clangd.setup{
     filetypes = {'c'}
 }
+require('lspconfig').csharp_ls.setup{}
 require('lspconfig').gleam.setup{}
+require('lspconfig').gopls.setup{}
+require('lspconfig').lua_ls.setup{}
+require('lspconfig').ruff_lsp.setup{}
+require('lspconfig').rust_analyzer.setup({})
+require('lspconfig').ts_ls.setup{}
