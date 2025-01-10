@@ -1,6 +1,6 @@
 local lsp = require'lsp-zero'.preset({})
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 
     local opts = { buffer = bufnr, remap = false }
@@ -30,9 +30,31 @@ require'mason'.setup()
 require'lspconfig'.clangd.setup{
     filetypes = {'c'}
 }
-require'lspconfig'.csharp_ls.setup{}
+require'lspconfig'.omnisharp.setup{
+    cmd = {
+        "dotnet",
+        vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll")
+    },
+
+    settings = {
+        FormattingOptions = {
+            EnableEditorConfigSupport = true,
+        },
+        RoslynExtensionsOptions = {
+            AnalyzeOpenDocumentsOnly = true,
+        }
+    }
+}
 require'lspconfig'.gopls.setup{}
-require'lspconfig'.lua_ls.setup{}
+require'lspconfig'.lua_ls.setup{
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+        }
+    }
+}
 require'lspconfig'.ruff.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.ts_ls.setup{}
