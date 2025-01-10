@@ -1,4 +1,4 @@
-local lsp = require('lsp-zero').preset({})
+local lsp = require'lsp-zero'.preset({})
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
@@ -11,8 +11,8 @@ end)
 
 lsp.setup()
 
-local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
+local cmp = require'cmp'
+local cmp_action = require'lsp-zero'.cmp_action()
 
 cmp.setup({
     mapping = {
@@ -25,15 +25,14 @@ cmp.setup({
     }
 })
 
-require('mason').setup()
+require'mason'.setup()
 
-require('lspconfig').clangd.setup{
+require'lspconfig'.clangd.setup{
     filetypes = {'c'}
 }
-require('lspconfig').csharp_ls.setup{}
-require('lspconfig').gleam.setup{}
-require('lspconfig').gopls.setup{}
-require('lspconfig').lua_ls.setup{}
-require('lspconfig').ruff.setup{}
-require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').ts_ls.setup{}
+require'lspconfig'.csharp_ls.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.lua_ls.setup{}
+require'lspconfig'.ruff.setup{}
+require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.ts_ls.setup{}

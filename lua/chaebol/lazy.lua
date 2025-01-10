@@ -13,7 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
+require'lazy'.setup({
     -- Theme
     { 'rose-pine/neovim', as = 'rose-pine' },
 
@@ -36,13 +36,6 @@ require('lazy').setup({
     -- Treesitter Context
     {
         'nvim-treesitter/nvim-treesitter-context',
-    },
-
-    -- Harpoon
-    {
-        'theprimeagen/harpoon',
-        branch = 'harpoon2',
-        dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     -- Lsp Zero

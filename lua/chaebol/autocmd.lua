@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     command = [[%s/\s\+$//e]],
 })
 
--- Format go-files  on save
+-- Format go-files on save
 vim.api.nvim_create_autocmd('BufWritePre', {
     group = format_group,
     pattern = '*.go',

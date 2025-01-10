@@ -11,7 +11,6 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 * [LSP-Zero](https://github.com/VonHeikemen/lsp-zero.nvim)
 * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-* [Harpoon2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 
 ## Commands Cheat Sheet
 
@@ -19,21 +18,12 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | Command     | Mode   | Comment                |
 |-------------|--------|------------------------|
 | space + pv  | Normal | Back to explorer       |
-| space + ps  | Normal | Search                 |
-| space + pf  | Normal | File search            |
+| space + ff  | Normal | File files             |
+| space + gf  | Normal | Git files              |
+| space + lg  | Normal | Live grep              |
 | gd          | Normal | Go to definition       |
 | K           | Normal | Hover                  |
 | space + y   | Visual | Yank to clipboard      |
 | space + Y   | Normal | Yank line to clipboard |
 | ctrl + k    | Visual | Move line up           |
 | ctrl + j    | Visual | Move line down         |
-
-### Harpoon
-| Command   | Mode   | Comment         |
-|-----------|--------|-----------------|
-| space + a | Normal | Add file        |
-| ctrl + e  | Normal | Menu            |
-| space + 1 | Normal | Swap to file #1 |
-| space + 2 | Normal | Swap to file #2 |
-| space + 3 | Normal | Swap to file #3 |
-| space + 4 | Normal | Swap to file #4 |
