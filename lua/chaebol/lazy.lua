@@ -17,7 +17,10 @@ require'lazy'.setup({
     -- Theme
     { 'rose-pine/neovim', as = 'rose-pine' },
 
-    -- Dependencies
+    -- Mini files
+    { 'echasnovski/mini.files', version = false },
+
+    -- Plenary
     { 'nvim-lua/plenary.nvim' },
 
     -- Telescope

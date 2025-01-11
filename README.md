@@ -11,6 +11,7 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 * [LSP-Zero](https://github.com/VonHeikemen/lsp-zero.nvim)
 * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+* [Mini-Files](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-files.md)
 
 ## Commands Cheat Sheet
 
@@ -27,3 +28,4 @@ For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSu
 | space + Y   | Normal | Yank line to clipboard |
 | ctrl + k    | Visual | Move line up           |
 | ctrl + j    | Visual | Move line down         |
+
