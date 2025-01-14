@@ -1,9 +1,5 @@
 lazy-lock.json
 
-# Contains compiled Packer file with custom paths. 
-# Generate this yourself to avoid errors on nvim runtime.
-plugin/
-
 # Compiled Lua sources
 luac.out
 
