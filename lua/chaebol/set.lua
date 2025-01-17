@@ -12,6 +12,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
+vim.opt.splitright = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -33,9 +34,9 @@ vim.opt.colorcolumn = '100'
 
 vim.opt.list = true
 
-local space = "·"
+local space = '·'
 vim.opt.listchars:append {
-    tab = "│─",
+    tab = '│─',
     multispace = space,
     lead = space,
     trail = space,

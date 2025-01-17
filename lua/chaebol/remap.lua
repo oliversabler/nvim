@@ -1,5 +1,3 @@
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-
 vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
@@ -14,5 +12,5 @@ vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 
--- Open Mini files
-vim.keymap.set('n', '<leader>e','<cmd>lua MiniFiles.open()<cr>')
+-- Oil
+vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })

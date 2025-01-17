@@ -32,8 +32,8 @@ require'lspconfig'.clangd.setup{
 }
 require'lspconfig'.omnisharp.setup{
     cmd = {
-        "dotnet",
-        vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll")
+        'dotnet',
+        vim.fn.expand('~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll')
     },
 
     settings = {
@@ -50,7 +50,7 @@ require'lspconfig'.lua_ls.setup{
     settings = {
         Lua = {
             diagnostics = {
-                globals = { "vim" },
+                globals = { 'vim' },
             },
         }
     }

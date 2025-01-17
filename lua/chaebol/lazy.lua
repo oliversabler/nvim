@@ -17,8 +17,12 @@ require'lazy'.setup({
     -- Theme
     { 'rose-pine/neovim', as = 'rose-pine' },
 
-    -- Mini files
-    { 'echasnovski/mini.files', version = false },
+    -- Oil
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    },
 
     -- Plenary
     { 'nvim-lua/plenary.nvim' },
