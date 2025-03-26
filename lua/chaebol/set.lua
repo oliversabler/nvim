@@ -36,9 +36,11 @@ vim.opt.list = true
 
 local space = '·'
 vim.opt.listchars:append {
-    tab = '│─',
+    tab = '» ',
     multispace = space,
     lead = space,
     trail = space,
     nbsp = space
 }
+
+vim.api.nvim_set_hl(0, "Whitespace", { fg = "#404040" })
