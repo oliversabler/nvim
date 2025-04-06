@@ -55,9 +55,6 @@ require'lazy'.setup({
     { 'hrsh7th/nvim-cmp' },
     { 'L3MON4D3/LuaSnip' },
 
-    -- Templ
-    { 'vrischmann/tree-sitter-templ' },
-
     -- Formatter
     { 'sbdchd/neoformat' }
 })
