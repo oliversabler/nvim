@@ -27,6 +27,7 @@ cmp.setup({
 
 require'mason'.setup()
 
+-- Language Server Protocol
 require'lspconfig'.clangd.setup{
     filetypes = {'c'}
 }
@@ -58,3 +59,10 @@ require'lspconfig'.lua_ls.setup{
 require'lspconfig'.ruff.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.ts_ls.setup{}
+
+-- Debug Adapter Protocol
+require'dap-go'.setup{
+  delve = {
+    path = vim.fn.expand('$HOME') .. '/go/bin/dlv',
+  }
+}

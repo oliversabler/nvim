@@ -45,6 +45,14 @@ require'lazy'.setup({
         'nvim-treesitter/nvim-treesitter-context',
     },
 
+    -- Debug Adapter Protocol
+    {
+        'mfussenegger/nvim-dap'
+    },
+    {
+        'leoluz/nvim-dap-go'
+    },
+
     -- Lsp Zero
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
