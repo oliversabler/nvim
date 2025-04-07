@@ -5,43 +5,6 @@ function statuscolumn.Set()
     local abs_num = vim.v.lnum
     local bufnr = vim.api.nvim_get_current_buf()
 
---    local diags = vim.diagnostic.get(bufnr, { lnum = abs_num - 1 })
---    local symbol = '  '
---
---    if #diags > 0 then
---        table.sort(diags, function(a, b)
---            return a.severity < b.severity
---        end)
---
---        local top_diag = diags[1]
---        local config = vim.diagnostic.config()
---        local signs = config.signs
---
---        if type(signs) == "table" and signs.text then
---            local icon = signs.text[top_diag.severity]
---            if icon then
---                symbol = icon .. ' '
---            end
---        end
---    end
---
---    local dap_symbols = vim.fn.sign_getplaced(bufnr, {
---        group = '*',
---        lnum = abs_num,
---    })[1].signs
---
---    if #dap_symbols > 0 then
---        for _, sign in ipairs(dap_symbols) do
---            if sign.name:match("DapBreakpoint") then
---              symbol = '● '
---              break
---            elseif sign.name:match("DapStopped") then
---              symbol = '▶ '
---              break
---          end
---        end
---    end
-
     local symbol = statuscolumn.set_diagnostic_symbol(abs_num, bufnr)
     local signs = statuscolumn.get_signs(abs_num, bufnr)
 
