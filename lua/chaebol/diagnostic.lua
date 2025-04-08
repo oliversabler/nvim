@@ -7,4 +7,9 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.INFO] = '»',
     },
   },
+  virtual_text = false,
 })
+
+vim.keymap.set('n', '<C-i>', function() vim.diagnostic.open_float({
+    border = 'single'
+}) end)
