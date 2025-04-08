@@ -1,5 +1,5 @@
 require'chaebol.autocmd'
+require'chaebol.config'
 require'chaebol.diagnostic'
+require'chaebol.keymap'
 require'chaebol.lazy'
-require'chaebol.remap'
-require'chaebol.set'
