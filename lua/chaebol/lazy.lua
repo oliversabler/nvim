@@ -35,28 +35,20 @@ require'lazy'.setup({
     },
 
     -- Treesitter
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate'
-    },
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
     -- Treesitter Context
-    {
-        'nvim-treesitter/nvim-treesitter-context',
-    },
+    { 'nvim-treesitter/nvim-treesitter-context' },
 
     -- Debug Adapter Protocol
-    {
-        'mfussenegger/nvim-dap'
-    },
-    {
-        'leoluz/nvim-dap-go'
-    },
+    { 'mfussenegger/nvim-dap' },
+    { 'leoluz/nvim-dap-go' },
 
-    -- Lsp Zero
+    -- Mason
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
 
+    -- Lsp Zero
     { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
