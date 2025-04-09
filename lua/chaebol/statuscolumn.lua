@@ -1,13 +1,13 @@
 local statuscolumn = {}
 
 local function get_sign(abs_num, bufnr)
-    local dap_signs= {
-        DapBreakpoint = '●',
-        DapStopped = '▶',
+    local dap_signs = {
+        DapBreakpoint = "●",
+        DapStopped = "▶",
     }
 
     local signs = vim.fn.sign_getplaced(bufnr, {
-        group = '*',
+        group = "*",
         lnum = abs_num,
     })[1].signs
 
@@ -29,11 +29,11 @@ local function get_sign(abs_num, bufnr)
         local top_diag = diags[1]
         local icon = vim.diagnostic.config().signs.text[top_diag.severity]
         if icon then
-            return icon .. ' '
+            return icon .. " "
         end
     end
 
-    return ' '
+    return " "
 end
 
 function statuscolumn.Set()
@@ -43,11 +43,11 @@ function statuscolumn.Set()
     local bufnr = vim.api.nvim_get_current_buf()
     local sign = get_sign(abs_num, bufnr)
 
-    local rel_str = string.format('%3d', rel_num)
-    local abs_str = string.format('%3d', abs_num)
-    local sign_str = string.format('%2s', sign)
+    local rel_str = string.format("%3d", rel_num)
+    local abs_str = string.format("%3d", abs_num)
+    local sign_str = string.format("%2s", sign)
 
-    return string.format('%s%s %s', abs_str, rel_str, sign_str)
+    return string.format("%s%s %s", abs_str, rel_str, sign_str)
 end
 
 return statuscolumn

@@ -1,18 +1,16 @@
-local treesitter_parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
+require "treesitter-context".setup {}
 
-require'treesitter-context'.setup{}
-
-require'nvim-treesitter.configs'.setup {
+require "nvim-treesitter.configs".setup {
     ensure_installed = {
-        'c',
-        'go',
-        'lua',
-        'python',
-        'vim',
-        'vimdoc',
-        'query',
-        'markdown',
-        'markdown_inline'
+        "c",
+        "go",
+        "lua",
+        "python",
+        "vim",
+        "vimdoc",
+        "query",
+        "markdown",
+        "markdown_inline"
     },
 
     sync_install = false,
