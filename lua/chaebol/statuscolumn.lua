@@ -28,8 +28,15 @@ local function get_sign(abs_num, bufnr)
 
         local top_diag = diags[1]
         local icon = vim.diagnostic.config().signs.text[top_diag.severity]
-        if icon then
-            return icon .. " "
+        local severity_highlight = ({
+            [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+            [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+            [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+            [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
+        })[top_diag.severity]
+
+        if icon and severity_highlight then
+            return string.format("%%#%s#%s %%*", severity_highlight, icon)
         end
     end
 
