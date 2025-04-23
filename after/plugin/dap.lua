@@ -31,7 +31,7 @@ dap.adapters.cppdbg = {
     }
 }
 
-dap.configurations.cpp = {
+dap.configurations.c = {
     {
         name = "Launch",
         type = "cppdbg",
@@ -45,9 +45,6 @@ dap.configurations.cpp = {
         MIDebuggerPath = '/usr/bin/lldb',
     }
 }
-
-dap.configurations.c = dap.configurations.cpp
-
 
 -- UI ATTACH
 local dapui = require "dapui"
