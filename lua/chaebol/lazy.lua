@@ -50,6 +50,12 @@ require "lazy".setup({
     { "mfussenegger/nvim-dap" },
     { "leoluz/nvim-dap-go" },
 
+    -- Debug Adapter Protocol UI
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+    },
+
     -- Mason
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
