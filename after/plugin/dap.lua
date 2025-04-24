@@ -46,6 +46,24 @@ dap.configurations.c = {
     }
 }
 
+-- DOTNET
+dap.adapters.coreclr = {
+    type = "executable",
+    command = "/usr/local/netcoredbg",
+    args = { "--interpreter=vscode" }
+}
+
+dap.configurations.cs = {
+    {
+        type = "coreclr",
+        name = "Launch",
+        request = "launch",
+        program = function()
+            return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/", "file")
+        end
+    }
+}
+
 -- UI ATTACH
 local dapui = require "dapui"
 dap.listeners.before.attach.dapui_config = function()
