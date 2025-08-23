@@ -32,4 +32,3 @@ For Go debugging [delve](https://github.com/go-delve/delve) is needed
 | space + Y   | Normal | Yank line to clipboard  |
 | ctrl + k    | Visual | Move line up            |
 | ctrl + j    | Visual | Move line down          |
-
