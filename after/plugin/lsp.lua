@@ -13,14 +13,14 @@ lsp.on_attach(function(client, bufnr)
     end, opts)
 
     -- Format on save
-    if client.server_capabilities.documentFormattingProvider then
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            callback = function()
-                vim.lsp.buf.format({ async = false })
-            end,
-        })
-    end
+    -- if client.server_capabilities.documentFormattingProvider then
+    --     vim.api.nvim_create_autocmd("BufWritePre", {
+    --         buffer = bufnr,
+    --         callback = function()
+    --             vim.lsp.buf.format({ async = false })
+    --         end,
+    --     })
+    -- end
 end)
 
 lsp.setup()
@@ -42,7 +42,8 @@ cmp.setup({
 require "mason".setup()
 
 require "lspconfig".clangd.setup {
-    filetypes = { "c" }
+    filetypes = { "c" },
+    -- cmd = { "clangd", "--fallback-style=Google" },
 }
 require "lspconfig".omnisharp.setup {
     cmd = {
