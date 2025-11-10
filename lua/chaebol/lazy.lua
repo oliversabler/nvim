@@ -19,6 +19,10 @@ require "lazy".setup({
         "rose-pine/neovim",
         as = "rose-pine"
     },
+    {
+        "datsfilipe/vesper.nvim",
+        as = "vesper"
+    },
 
     -- Oil
     {
