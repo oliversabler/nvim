@@ -41,11 +41,13 @@ cmp.setup({
 
 require "mason".setup()
 
-require "lspconfig".clangd.setup {
+vim.lsp.config("clangd", {
     filetypes = { "c" },
     -- cmd = { "clangd", "--fallback-style=Google" },
-}
-require "lspconfig".omnisharp.setup {
+})
+vim.lsp.enable("clangd");
+
+vim.lsp.config("omnisharp", {
     cmd = {
         "dotnet",
         vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll")
@@ -59,9 +61,13 @@ require "lspconfig".omnisharp.setup {
             AnalyzeOpenDocumentsOnly = true,
         }
     }
-}
-require "lspconfig".gopls.setup {}
-require "lspconfig".lua_ls.setup {
+})
+vim.lsp.enable("omnisharp")
+
+vim.lsp.config("gopls", {})
+vim.lsp.enable("gopls")
+
+vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
@@ -69,7 +75,14 @@ require "lspconfig".lua_ls.setup {
             },
         }
     }
-}
-require "lspconfig".ruff.setup {}
-require "lspconfig".rust_analyzer.setup {}
-require "lspconfig".ts_ls.setup {}
+})
+vim.lsp.enable("lua_ls")
+
+vim.lsp.config("ruff", {})
+vim.lsp.enable("ruff")
+
+vim.lsp.config("rust_analyzer", {})
+vim.lsp.enable("rust_analyzer")
+
+vim.lsp.config("ts_ls", {})
+vim.lsp.enable("ts_ls")
