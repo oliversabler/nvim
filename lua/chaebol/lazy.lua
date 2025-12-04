@@ -23,6 +23,10 @@ require "lazy".setup({
         "datsfilipe/vesper.nvim",
         as = "vesper"
     },
+    {
+        "shaunsingh/nord.nvim",
+        as = "nord"
+    },
 
     -- Oil
     {
