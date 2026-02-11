@@ -2,6 +2,10 @@
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 
+-- Copy to clipboard
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
+
 local function trim_leading_whitespace(text)
   local lines = vim.split(text, "\n", { trimempty = false })
 
@@ -31,9 +35,8 @@ local function trim_leading_whitespace(text)
   return table.concat(lines, "\n") .. "\n"
 end
 
-vim.keymap.set("v", "<leader>y", function()
+-- Copy to clipboard and trim leading whitespace
+vim.keymap.set("v", "<leader>c", function()
   vim.cmd('normal! "+y')
   vim.fn.setreg("+", trim_leading_whitespace(vim.fn.getreg("+")))
 end)
-
-vim.keymap.set("n", "<leader>Y", '"+Y')
