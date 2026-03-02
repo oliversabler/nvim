@@ -1,5 +1,7 @@
 local statuscolumn = {}
 
+vim.api.nvim_set_hl(0, "StatusColumnActive", { fg = "#ffffff", bold = true })
+
 local function get_sign(abs_num, bufnr)
     local dap_signs = {
         DapBreakpoint = "●",
@@ -53,6 +55,10 @@ function statuscolumn.Set()
     local rel_str = string.format("%3d", rel_num)
     local abs_str = string.format("%3d", abs_num)
     local sign_str = string.format("%2s", sign)
+
+    if rel_num == 0 then
+        return string.format("%%#StatusColumnActive#%s%s %s%%*", abs_str, rel_str, sign_str)
+    end
 
     return string.format("%s%s %s", abs_str, rel_str, sign_str)
 end
