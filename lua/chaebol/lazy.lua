@@ -28,6 +28,12 @@ require "lazy".setup({
         as = "nord"
     },
 
+    -- Bandit
+    {
+        "oliversabler/bandit.nvim",
+        as = "bandit"
+    },
+
     -- Oil
     {
         "stevearc/oil.nvim",
