@@ -16,12 +16,13 @@ vim.opt.rtp:prepend(lazypath)
 require "lazy".setup({
     -- Theme
     {
-        "rose-pine/neovim",
-        as = "rose-pine"
+        "catppuccin/nvim",
+        as = "catppuccin",
+        priority = 1000
     },
     {
-        "datsfilipe/vesper.nvim",
-        as = "vesper"
+        "rose-pine/neovim",
+        as = "rosepine"
     },
     {
         "shaunsingh/nord.nvim",
