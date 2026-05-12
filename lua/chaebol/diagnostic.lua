@@ -10,7 +10,7 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
-vim.keymap.set("n", "<C-d>", function()
+vim.keymap.set("n", "<C-e>", function()
     vim.diagnostic.open_float({
         border = "single"
     })
