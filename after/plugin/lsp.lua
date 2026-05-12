@@ -47,22 +47,15 @@ vim.lsp.config("clangd", {
 })
 vim.lsp.enable("clangd");
 
-vim.lsp.config("omnisharp", {
-    cmd = {
-        "dotnet",
-        vim.fn.expand("~/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll")
-    },
-
+vim.lsp.config("roslyn", {
     settings = {
-        FormattingOptions = {
-            EnableEditorConfigSupport = true,
+        ["csharp|background_analysis"] = {
+            dotnet_analyzer_diagnostics_scope = "openFiles",
+            dotnet_compiler_diagnostics_scope = "openFiles",
         },
-        RoslynExtensionsOptions = {
-            AnalyzeOpenDocumentsOnly = true,
-        }
     }
 })
-vim.lsp.enable("omnisharp")
+vim.lsp.enable("roslyn")
 
 vim.lsp.config("gopls", {})
 vim.lsp.enable("gopls")
