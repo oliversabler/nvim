@@ -39,7 +39,12 @@ cmp.setup({
     }
 })
 
-require "mason".setup()
+require "mason".setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+    },
+})
 
 vim.lsp.config("clangd", {
     filetypes = { "c" },
