@@ -1,23 +1,19 @@
 require "treesitter-context".setup {}
 
-require "nvim-treesitter.configs".setup {
-    ensure_installed = {
-        "c",
-        "go",
-        "lua",
-        "python",
-        "vim",
-        "vimdoc",
-        "query",
-        "markdown",
-        "markdown_inline"
-    },
-
-    sync_install = false,
-    auto_install = true,
-
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+local filetypes = {
+    "c",
+    "go",
+    "lua",
+    "python",
+    "vim",
+    "vimdoc",
+    "query",
+    "markdown",
 }
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = filetypes,
+    callback = function()
+        vim.treesitter.start()
+    end,
+})
