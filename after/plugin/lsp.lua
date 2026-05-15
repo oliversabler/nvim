@@ -48,7 +48,6 @@ require "mason".setup({
 
 vim.lsp.config("clangd", {
     filetypes = { "c" },
-    -- cmd = { "clangd", "--fallback-style=Google" },
 })
 vim.lsp.enable("clangd");
 
@@ -75,15 +74,6 @@ vim.lsp.config("lua_ls", {
     }
 })
 vim.lsp.enable("lua_ls")
-
-vim.lsp.config("pyright", {})
-vim.lsp.enable("pyright")
-
-vim.lsp.config("ruff", {})
-vim.lsp.enable("ruff")
-
-vim.lsp.config("rust_analyzer", {})
-vim.lsp.enable("rust_analyzer")
 
 vim.lsp.config("ts_ls", {})
 vim.lsp.enable("ts_ls")

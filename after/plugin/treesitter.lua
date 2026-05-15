@@ -1,5 +1,7 @@
 require "treesitter-context".setup {}
 
+local treesitter = require("nvim-treesitter")
+
 local filetypes = {
     "c",
     "go",
@@ -10,6 +12,8 @@ local filetypes = {
     "query",
     "markdown",
 }
+
+treesitter.install(filetypes)
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = filetypes,
