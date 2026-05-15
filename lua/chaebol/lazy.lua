@@ -48,7 +48,6 @@ require "lazy".setup({
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.5",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
 
@@ -84,7 +83,13 @@ require "lazy".setup({
     },
     {
         "seblyng/roslyn.nvim",
-        opts = {}
+        opts = {
+            extensions = {
+                razor = {
+                    enabled = false,
+                },
+            },
+        },
     },
     { "neovim/nvim-lspconfig" },
     { "hrsh7th/cmp-nvim-lsp" },

@@ -5,9 +5,9 @@
 2. Run nvim?
 
 ### Prerequisites
-For Telescopes grep_string to work, install [ripgrep](https://github.com/BurntSushi/ripgrep)
-
-For Go debugging [delve](https://github.com/go-delve/delve) is needed
+- Telescope: [ripgrep](https://github.com/BurntSushi/ripgrep)
+- Go debugging: [delve](https://github.com/go-delve/delve)
+- nvim-treesitter needs tree-sitter-cli, install with brew or something
 
 ## Plugins
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
