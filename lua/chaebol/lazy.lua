@@ -51,6 +51,12 @@ require "lazy".setup({
         dependencies = { "nvim-lua/plenary.nvim" }
     },
 
+    -- Diffview
+    {
+        "sindrets/diffview.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
