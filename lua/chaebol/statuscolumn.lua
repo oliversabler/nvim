@@ -8,10 +8,11 @@ local function get_sign(abs_num, bufnr)
         DapStopped = "▶",
     }
 
-    local signs = vim.fn.sign_getplaced(bufnr, {
+    local placed = vim.fn.sign_getplaced(bufnr, {
         group = "*",
         lnum = abs_num,
-    })[1].signs
+    })[1]
+    local signs = placed and placed.signs or {}
 
     for _, sign in ipairs(signs) do
         for prefix, symbol in pairs(dap_signs) do
