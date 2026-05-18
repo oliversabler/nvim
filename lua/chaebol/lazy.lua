@@ -14,7 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require "lazy".setup({
-    -- Theme
+    -- Themes
     {
         "catppuccin/nvim",
         as = "catppuccin",
@@ -95,7 +95,4 @@ require "lazy".setup({
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/nvim-cmp" },
     { "L3MON4D3/LuaSnip" },
-
-    -- Formatter
-    { "sbdchd/neoformat" }
 })
