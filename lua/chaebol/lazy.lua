@@ -87,16 +87,6 @@ require "lazy".setup({
         "VonHeikemen/lsp-zero.nvim",
         branch = "v3.x"
     },
-    {
-        "seblyng/roslyn.nvim",
-        opts = {
-            extensions = {
-                razor = {
-                    enabled = false,
-                },
-            },
-        },
-    },
     { "neovim/nvim-lspconfig" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/nvim-cmp" },

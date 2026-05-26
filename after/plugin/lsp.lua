@@ -51,7 +51,8 @@ vim.lsp.config("clangd", {
 })
 vim.lsp.enable("clangd");
 
-vim.lsp.config("roslyn", {
+vim.lsp.config("roslyn_ls", {
+    filetypes = { "razor", "cs" },
     settings = {
         ["csharp|background_analysis"] = {
             dotnet_analyzer_diagnostics_scope = "openFiles",
@@ -59,7 +60,7 @@ vim.lsp.config("roslyn", {
         },
     }
 })
-vim.lsp.enable("roslyn")
+vim.lsp.enable("roslyn_ls")
 
 vim.lsp.config("gopls", {})
 vim.lsp.enable("gopls")
