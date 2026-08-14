@@ -47,7 +47,7 @@ require "mason".setup({
 })
 
 vim.lsp.config("clangd", {
-    filetypes = { "c" },
+    filetypes = { "c", "cpp" },
 })
 vim.lsp.enable("clangd");
 

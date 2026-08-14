@@ -4,6 +4,7 @@ local treesitter = require("nvim-treesitter")
 
 local filetypes = {
     "c",
+    "cpp",
     "go",
     "lua",
     "python",
