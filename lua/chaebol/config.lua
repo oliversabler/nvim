@@ -13,6 +13,7 @@ vim.opt.smartindent = true
 vim.opt.ignorecase = true
 
 vim.opt.wrap = false
+vim.opt.hidden = true
 vim.opt.splitright = true
 
 vim.opt.swapfile = false
