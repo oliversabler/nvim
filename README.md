@@ -35,9 +35,3 @@
 | space + s     | Normal | Unpin current buffer               |
 | space + w     | Normal | Toggle buffer slot visibility      |
 | space + 1-5   | Normal | Go to buffer slot 1 through 5      |
-
-## Fix
-- "special buffer" disappears when toggle the bar
-- if 1, 2 and 3 are populated, 2 deleted, 3 should move to slot 2
-- toggle bar should be off by default
-- fix general nvim pathing for Opencode

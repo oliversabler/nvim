@@ -127,8 +127,13 @@ vim.api.nvim_create_autocmd({ "BufDelete", "BufWipeout" }, {
     callback = function(args)
         for number = 1, max_slots do
             if slots[number] == args.buf then
-                compact_slots(args.buf)
-                redraw()
+                local buffer = args.buf
+                vim.schedule(function()
+                    if not vim.api.nvim_buf_is_loaded(buffer) then
+                        compact_slots(buffer)
+                    end
+                    redraw()
+                end)
                 return
             end
         end
