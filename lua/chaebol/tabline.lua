@@ -11,6 +11,19 @@ local function redraw()
     vim.cmd "redrawtabline"
 end
 
+local function compact_slots(excluded_buffer)
+    local compacted = {}
+
+    for number = 1, max_slots do
+        local buffer = slots[number]
+        if buffer and buffer ~= excluded_buffer and vim.api.nvim_buf_is_valid(buffer) then
+            compacted[#compacted + 1] = buffer
+        end
+    end
+
+    slots = compacted
+end
+
 local function display_path(path)
     path = path:gsub("/+$", "")
     if path == startup_directory or path:sub(1, #startup_directory + 1) == startup_directory .. "/" then
@@ -37,13 +50,10 @@ local function slotline()
     local current_buffer = vim.api.nvim_get_current_buf()
     local labels = {}
 
+    compact_slots()
+
     for number = 1, max_slots do
         local buffer = slots[number]
-        if buffer and not vim.api.nvim_buf_is_valid(buffer) then
-            slots[number] = nil
-            buffer = nil
-        end
-
         local highlight = buffer == current_buffer and "%#TabLineSel#" or "%#TabLine#"
         local name = buffer and get_name(buffer):gsub("%%", "%%%%") or " "
         labels[number] = highlight .. "[" .. number .. "] " .. name .. " "
@@ -61,6 +71,8 @@ local function pin()
         return
     end
 
+    compact_slots()
+
     for number = 1, max_slots do
         if slots[number] == buffer then
             warn("Current buffer is already pinned to slot " .. number)
@@ -68,12 +80,10 @@ local function pin()
         end
     end
 
-    for number = 1, max_slots do
-        if not slots[number] or not vim.api.nvim_buf_is_valid(slots[number]) then
-            slots[number] = buffer
-            redraw()
-            return
-        end
+    if #slots < max_slots then
+        slots[#slots + 1] = buffer
+        redraw()
+        return
     end
 
     warn("Cannot pin more than " .. max_slots .. " buffers")
@@ -82,9 +92,11 @@ end
 local function unpin()
     local buffer = vim.api.nvim_get_current_buf()
 
+    compact_slots()
+
     for number = 1, max_slots do
         if slots[number] == buffer then
-            slots[number] = nil
+            table.remove(slots, number)
             redraw()
             return
         end
@@ -99,12 +111,10 @@ end
 
 local function goto_slot(number)
     number = tonumber(number)
+    compact_slots()
     local buffer = number and slots[number]
 
-    if not buffer or not vim.api.nvim_buf_is_valid(buffer) then
-        if number and number >= 1 and number <= max_slots then
-            slots[number] = nil
-        end
+    if not buffer then
         warn("No buffer pinned to slot " .. tostring(number))
         redraw()
         return
@@ -117,8 +127,9 @@ vim.api.nvim_create_autocmd({ "BufDelete", "BufWipeout" }, {
     callback = function(args)
         for number = 1, max_slots do
             if slots[number] == args.buf then
-                slots[number] = nil
+                compact_slots(args.buf)
                 redraw()
+                return
             end
         end
     end,
