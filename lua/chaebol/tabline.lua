@@ -141,7 +141,7 @@ for number = 1, max_slots do
     end, { desc = "Go to buffer slot " .. number, silent = true })
 end
 
-vim.o.showtabline = 2
+vim.o.showtabline = 0
 vim.o.tabline = "%!v:lua.require'chaebol.tabline'.slotline()"
 
 return { slotline = slotline }
