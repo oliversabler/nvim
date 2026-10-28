@@ -6,8 +6,9 @@
 
 ### Prerequisites
 - Telescope: [ripgrep](https://github.com/BurntSushi/ripgrep)
-- Go debugging: [delve](https://github.com/go-delve/delve)
 - nvim-treesitter needs tree-sitter-cli, install with brew or something
+- Go debugging: [delve](https://github.com/go-delve/delve)
+- .NET debugging (see section below)
 
 ## Plugins
 * [Telescope](https://github.com/nvim-telescope/telescope.nvim)
@@ -15,6 +16,15 @@
 * [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 * [Oil](https://github.com/stevearc/oil.nvim)
 * [DAP](https://github.com/mfussenegger/nvim-dap)
+
+## .NET debugging
+
+1. Install the [.NET SDK](https://dotnet.microsoft.com/download).
+2. Download the latest macOS ARM64 netcoredbg from [Samsung's releases](https://github.com/Samsung/netcoredbg/releases).
+3. Extract the entire netcoredbg folder to `~/.local/share/netcoredbg/VERSION/` (replace `VERSION` with the release version).
+4. Link it: `ln -sfn VERSION ~/.local/share/netcoredbg/current`.
+5. Make it executable: `chmod u+x ~/.local/share/netcoredbg/current/netcoredbg`.
+6. Build your project with `dotnet build -c Debug`, open Neovim from the project directory, and press `<F5>` to select the application DLL.
 
 ## Commands Cheat Sheet
 

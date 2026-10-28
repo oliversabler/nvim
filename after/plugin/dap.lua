@@ -49,7 +49,7 @@ dap.configurations.c = {
 -- DOTNET
 dap.adapters.coreclr = {
     type = "executable",
-    command = "/usr/local/netcoredbg",
+    command = vim.fn.expand("~/.local/share/netcoredbg/current/netcoredbg"),
     args = { "--interpreter=vscode" }
 }
 
