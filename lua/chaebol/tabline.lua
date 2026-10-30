@@ -1,7 +1,13 @@
 local max_slots = 5
 local slots = {}
-local startup_directory = vim.fn.fnamemodify(vim.fn.getcwd(), ":p"):gsub("/+$", "")
+local startup_directory = vim.fn.argv(0):gsub("^oil://", "")
+if vim.fn.isdirectory(startup_directory) == 0 then
+    startup_directory = vim.fn.getcwd()
+end
+startup_directory = vim.fn.fnamemodify(startup_directory, ":p"):gsub("/+$", "")
 local startup_parent = vim.fn.fnamemodify(startup_directory, ":h")
+local state_directory = vim.fn.stdpath "state" .. "/buffer-slots"
+local state_file = state_directory .. "/" .. vim.fn.sha256(startup_directory) .. ".json"
 
 local function warn(message)
     vim.notify(message, vim.log.levels.WARN, { title = "Buffer slots" })
@@ -82,6 +88,9 @@ local function pin()
 
     if #slots < max_slots then
         slots[#slots + 1] = buffer
+        if #slots == 1 and vim.o.showtabline == 0 then
+            vim.o.showtabline = 2
+        end
         redraw()
         return
     end
@@ -122,6 +131,55 @@ local function goto_slot(number)
 
     vim.api.nvim_set_current_buf(buffer)
 end
+
+local function save_state()
+    compact_slots()
+    local buffers = {}
+    for _, buffer in ipairs(slots) do
+        buffers[#buffers + 1] = vim.api.nvim_buf_get_name(buffer)
+    end
+
+    vim.fn.mkdir(state_directory, "p")
+    vim.fn.writefile({ vim.json.encode({ buffers = buffers, visible = vim.o.showtabline ~= 0 }) }, state_file)
+end
+
+local function restore_state()
+    if vim.fn.filereadable(state_file) == 0 then
+        return
+    end
+
+    local ok, state = pcall(vim.json.decode, table.concat(vim.fn.readfile(state_file), "\n"))
+    if not ok or type(state) ~= "table" or type(state.buffers) ~= "table" then
+        return
+    end
+
+    for _, name in ipairs(state.buffers) do
+        if #slots == max_slots then
+            break
+        end
+        if type(name) == "string"
+            and (vim.fn.filereadable(name) == 1 or vim.fn.isdirectory((name:gsub("^oil://", ""))) == 1) then
+            local buffer = vim.fn.bufadd(name)
+            vim.fn.bufload(buffer)
+            if vim.bo[buffer].buftype == "" then
+                vim.bo[buffer].buflisted = true
+            end
+            slots[#slots + 1] = buffer
+        end
+    end
+
+    vim.o.showtabline = state.visible and 2 or 0
+    redraw()
+end
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    once = true,
+    nested = true,
+    callback = function()
+        restore_state()
+        vim.api.nvim_create_autocmd("VimLeavePre", { callback = save_state })
+    end,
+})
 
 vim.api.nvim_create_autocmd({ "BufDelete", "BufWipeout" }, {
     callback = function(args)
