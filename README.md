@@ -24,7 +24,7 @@
 3. Extract the entire netcoredbg folder to `~/.local/share/netcoredbg/VERSION/` (replace `VERSION` with the release version).
 4. Link it: `ln -sfn VERSION ~/.local/share/netcoredbg/current`.
 5. Make it executable: `chmod u+x ~/.local/share/netcoredbg/current/netcoredbg`.
-6. Build your project with `dotnet build -c Debug`, open Neovim from the project directory, and press `<F5>` to select the application DLL.
+6. Optional: [easy-dotnet.nvim](https://github.com/GustavEikaas/easy-dotnet.nvim): `dotnet tool install -g EasyDotnet`.
 
 ## Commands Cheat Sheet
 
@@ -45,3 +45,6 @@
 | space + s     | Normal | Unpin current buffer               |
 | space + w     | Normal | Toggle buffer slot visibility      |
 | space + 1-5   | Normal | Go to buffer slot 1 through 5      |
+| F5            | Normal | Start/continue debugging           |
+| space + dl    | Normal | .NET: select project/profile       |
+| space + dd    | Normal | .NET: debug default project        |

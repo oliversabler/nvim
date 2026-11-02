@@ -46,24 +46,6 @@ dap.configurations.c = {
     }
 }
 
--- DOTNET
-dap.adapters.coreclr = {
-    type = "executable",
-    command = vim.fn.expand("~/.local/share/netcoredbg/current/netcoredbg"),
-    args = { "--interpreter=vscode" }
-}
-
-dap.configurations.cs = {
-    {
-        type = "coreclr",
-        name = "Launch",
-        request = "launch",
-        program = function()
-            return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/", "file")
-        end
-    }
-}
-
 -- UI ATTACH
 local dapui = require "dapui"
 dap.listeners.before.attach.dapui_config = function()
@@ -93,6 +75,10 @@ end)
 
 vim.keymap.set("n", "<Leader>b", function() dap.toggle_breakpoint() end)
 vim.keymap.set("n", "<Leader>dr", function() dap.repl.open() end)
+
+local dotnet = require "easy-dotnet"
+vim.keymap.set("n", "<Leader>dl", dotnet.debug_profile, { desc = ".NET: debug project with launch profile" })
+vim.keymap.set("n", "<Leader>dd", dotnet.debug_default, { desc = ".NET: debug default project" })
 
 local widgets = require "dap.ui.widgets"
 vim.keymap.set({ "n", "v" }, "<Leader>dh", function() widgets.hover() end)

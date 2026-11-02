@@ -66,6 +66,24 @@ require "lazy".setup({
     { "mfussenegger/nvim-dap" },
     { "leoluz/nvim-dap-go" },
 
+    -- .NET project and launch-profile debugging
+    {
+        "GustavEikaas/easy-dotnet.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap" },
+        opts = {
+            picker = "telescope",
+            lsp = { enabled = false },
+            projx_lsp = { enabled = false },
+            debugger = {
+                bin_path = vim.fn.expand("~/.local/share/netcoredbg/current/netcoredbg"),
+            },
+            test_runner = { auto_start_testrunner = false },
+            auto_bootstrap_namespace = { enabled = false },
+            csproj_mappings = false,
+            fsproj_mappings = false,
+        },
+    },
+
     -- Debug Adapter Protocol UI
     {
         "rcarriga/nvim-dap-ui",
