@@ -76,8 +76,8 @@ vim.lsp.config("lua_ls", {
 })
 vim.lsp.enable("lua_ls")
 
-vim.lsp.config("ts_ls", {})
-vim.lsp.enable("ts_ls")
+vim.lsp.config("tsc", {})
+vim.lsp.enable("tsc")
 
 vim.lsp.config("elixirls", {})
 vim.lsp.enable("elixirls")
