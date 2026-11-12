@@ -94,6 +94,9 @@ require "lazy".setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
 
+    -- Formatting
+    { "stevearc/conform.nvim" },
+
     -- Lsp Zero
     {
         "VonHeikemen/lsp-zero.nvim",

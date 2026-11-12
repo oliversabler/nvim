@@ -79,5 +79,10 @@ vim.lsp.enable("lua_ls")
 vim.lsp.config("tsc", {})
 vim.lsp.enable("tsc")
 
+vim.lsp.config("eslint", {
+    filetypes = { "javascript", "typescript" },
+})
+vim.lsp.enable("eslint")
+
 vim.lsp.config("elixirls", {})
 vim.lsp.enable("elixirls")
