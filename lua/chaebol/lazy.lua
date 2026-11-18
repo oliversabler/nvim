@@ -47,8 +47,18 @@ require "lazy".setup({
 
     -- Diffview
     {
-        "sindrets/diffview.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" }
+        "dlyongemallo/diffview-plus.nvim",
+        main = "diffview",
+        opts = {
+            view = {
+                default = { layout = "diff1_inline" },
+                file_history = { layout = "diff1_inline" },
+                inline = { style = "unified" },
+            },
+            file_panel = {
+                win_config = { width = 60 },
+            },
+        },
     },
 
     -- Treesitter
